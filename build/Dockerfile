@@ -31,7 +31,7 @@ RUN set -x \
     && wget  https://github.com/alibaba/nacos/releases/download/${NACOS_VERSION}/nacos-server-${NACOS_VERSION}.tar.gz -P /home \
     && tar -xzvf /home/nacos-server-${NACOS_VERSION}.tar.gz -C /home \
     && mkdir -p /home/nacos/plugins/mysql/
-    # install mysql 8.0
+    # install mysql 8.0 driver
     && wget https://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-${MYSQL_VERSION}.tar.gz -P /home/tmp
     && tar -xzvf /home/tmp/mysql-connector-java-${MYSQL_VERSION}.tar.gz -C /home/tmp
     && mv /home/tmp/mysql-connector-java-${MYSQL_VERSION}/mysql-connector-java-${MYSQL_VERSION}.jar /home/nacos/plugins/mysql/mysql-connector-java-${MYSQL_VERSION}.jar
