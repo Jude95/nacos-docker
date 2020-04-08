@@ -30,11 +30,12 @@ RUN set -x \
     && yum install -y java-1.8.0-openjdk java-1.8.0-openjdk-devel wget iputils nc  vim libcurl\
     && wget  https://github.com/alibaba/nacos/releases/download/${NACOS_VERSION}/nacos-server-${NACOS_VERSION}.tar.gz -P /home \
     && tar -xzvf /home/nacos-server-${NACOS_VERSION}.tar.gz -C /home \
-    && mkdir -p /home/nacos/plugins/mysql/
-    # install mysql 8.0 driver
-    && wget https://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-${MYSQL_VERSION}.tar.gz -P /home/tmp
-    && tar -xzvf /home/tmp/mysql-connector-java-${MYSQL_VERSION}.tar.gz -C /home/tmp
-    && mv /home/tmp/mysql-connector-java-${MYSQL_VERSION}/mysql-connector-java-${MYSQL_VERSION}.jar /home/nacos/plugins/mysql/mysql-connector-java-${MYSQL_VERSION}.jar
+
+    # install mysql 8.0 \
+    && mkdir -p /home/nacos/plugins/mysql/ \
+    && wget https://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-${MYSQL_VERSION}.tar.gz -P /home/tmp \
+    && tar -xzvf /home/tmp/mysql-connector-java-${MYSQL_VERSION}.tar.gz -C /home/tmp \
+    && mv /home/tmp/mysql-connector-java-${MYSQL_VERSION}/mysql-connector-java-${MYSQL_VERSION}.jar /home/nacos/plugins/ mysql/mysql-connector-java-${MYSQL_VERSION}.jar \
     
     && rm -rf /home/nacos-server-${NACOS_VERSION}.tar.gz /home/nacos/bin/* /home/nacos/conf/*.properties /home/nacos/conf/*.example /home/nacos/conf/nacos-mysql.sql \
     && yum autoremove -y wget \
