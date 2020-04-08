@@ -35,7 +35,7 @@ RUN set -x \
     && mkdir -p /home/nacos/plugins/mysql/ \
     && wget https://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-${MYSQL_VERSION}.tar.gz -P /home/tmp \
     && tar -xzvf /home/tmp/mysql-connector-java-${MYSQL_VERSION}.tar.gz -C /home/tmp \
-    && mv /home/tmp/mysql-connector-java-${MYSQL_VERSION}/mysql-connector-java-${MYSQL_VERSION}.jar /home/nacos/plugins/ mysql/mysql-connector-java-${MYSQL_VERSION}.jar \
+    && mv /home/tmp/mysql-connector-java-${MYSQL_VERSION}/mysql-connector-java-${MYSQL_VERSION}.jar /home/nacos/plugins/mysql/mysql-connector-java-${MYSQL_VERSION}.jar \
     
     && rm -rf /home/nacos-server-${NACOS_VERSION}.tar.gz /home/nacos/bin/* /home/nacos/conf/*.properties /home/nacos/conf/*.example /home/nacos/conf/nacos-mysql.sql \
     && yum autoremove -y wget \
