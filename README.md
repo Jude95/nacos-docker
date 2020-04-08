@@ -4,6 +4,8 @@
 
 This project contains a Docker image meant to facilitate the deployment of [Nacos](https://github.com/alibaba/nacos).
 
+This fork use Mysql 8.0 by default.
+
 [**中文**](README_ZH.md)
 
 ## Project directory
